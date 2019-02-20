@@ -1,1 +1,5 @@
 theme: jekyll-theme-minimal
+title: 30-days-javascript
+subtitle: "Solution to 30-days-javascript"
+url: "https://majagrubic.github.io" 
+baseurl: "/30-days-javascript"
