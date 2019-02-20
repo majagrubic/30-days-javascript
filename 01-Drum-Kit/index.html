@@ -66,18 +66,16 @@
       applyClass(child); 
     });
     child.addEventListener('transitionend', e => { 
-      console.log('transitionend');
       if (e.propertyName !== 'transform') return;
       removeClass(child); 
     });
-    window.addEventListener('keydown', e => {
-      const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
-      playSound(key);
-      applyClass(key);
-    });
+  });
+  window.addEventListener('keydown', e => {
+    const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+    playSound(key);
+    applyClass(key);
   });
     
-
   function playSound(el) {
     var soundEl = el.getElementsByClassName("sound")[0];
     var name = soundEl.innerHTML;
