@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+    const p = document.querySelector('p');
+   
+    function makeGreen() {
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+    console.log('Hello');
+
+    // Interpolated
+    console.log('Hello %s', 'there');
+
+    // Styled
+    console.log('%c This is a styled text', 'font-size: 20px; color: red; line-height: 20px');
+
+    // warning!
+    console.warn('Something might be wrong');
+
+    // Error :|
+    console.error('Something IS wrong');
+
+    // Info
+    console.info('Nothing to see here. Carry on');
+
+    // Testing
+    console.assert(2+2 === 5, 'How much is 2+2?');
+
+    // clearing
+    console.clear();
+
+    // Viewing DOM Elements
+    console.dir(p);
+
+    // Grouping together
+    dogs.forEach(dog => {
+      console.group(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.log(`${dog.name} is ${dog.age * 7} years old in human years`);
+      console.groupEnd(`${dog.name}`);
+    });
+
+    // counting
+    console.count('First');
+    console.count('First');
+    console.count('First');
+    console.count('First');
+
+    // timing
+    console.time('For loop');
+    for (let i=0; i<100000; i++) {
+      for (let j=0; j<100; j++) {}
+    }
+    console.timeEnd('For loop');
+
+    //table
+    console.table(dogs);
+
+  </script>
+</body>
+</html>
